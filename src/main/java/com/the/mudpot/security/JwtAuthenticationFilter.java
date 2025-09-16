@@ -55,6 +55,8 @@ public class JwtAuthenticationFilter implements Filter {
             if(requestURI.startsWith("/uploads/")
                     || "/api/statistic".equals(requestURI)
                     || requestURI.startsWith("/api/menu-items")
+                    || requestURI.startsWith("/api/cart")
+                    || requestURI.startsWith("/api/admin/curries")
                     || requestURI.startsWith("/api/auth/")
                     || "/api/statistic/chart".equals(requestURI)
                     || requestURI.startsWith("/api/auth/login/")) {

@@ -34,20 +34,6 @@ public class MenuItemController {
     private FileStorageService fileStorageService;
 
 
-//    @PostMapping
-//    public ResponseEntity<MenuItemDTO> addDisaster(
-//            @RequestPart("disaster") MenuItem menuItem,
-//            @RequestParam("image") MultipartFile image) {
-//
-//        if (!image.isEmpty()) {
-//            String imageUrl = fileStorageService.storeFile(image);
-//            menuItem.setImageUrl(imageUrl);
-//        }
-//        MenuItem savedMenuItem = menuItemService.addDisaster(menuItem);
-//
-//        MenuItemDTO menuItemDTO = MenuItemDTO.init(savedMenuItem);
-//        return ResponseEntity.ok(menuItemDTO);
-//    }
 
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @ResponseStatus(HttpStatus.CREATED)

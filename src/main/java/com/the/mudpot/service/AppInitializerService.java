@@ -1,8 +1,10 @@
 package com.the.mudpot.service;
 
+import com.the.mudpot.model.CurryItem;
 import com.the.mudpot.model.MenuItem;
 import com.the.mudpot.model.Role;
 import com.the.mudpot.model.User;
+import com.the.mudpot.repository.CurryItemRepository;
 import com.the.mudpot.repository.MenuItemRepository;
 import com.the.mudpot.repository.RoleRepository;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -14,9 +16,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 @Service
@@ -26,11 +30,15 @@ public class AppInitializerService {
     @Autowired
     private MenuItemRepository menuItemRepository;
 
+    @Autowired
+    private CurryItemRepository curryItemRepository;
+
     @PostConstruct
     public void init() {
         try {
 
             this.createMenuItemsIfNotExists();
+            this.createCurryItemsIfNotExists();
         } catch (Exception e) {
             System.err.println("An unexpected error occurred: " + e.getMessage());
             e.printStackTrace();
@@ -69,23 +77,36 @@ public class AppInitializerService {
     }
 
 
-//    public void createAgencyIfNotExists() throws IOException {
-//        log.info("Creating default car colors");
-//        String jsonContent = AppResources.asString("default/agency.json").orElseThrow(() ->
-//                new RuntimeException("Error reading JSON file")
-//        );
-//
-//        ObjectMapper objectMapper = new ObjectMapper();
-//        User user = objectMapper.readValue(
-//                jsonContent,
-//                new TypeReference<User>() {}
-//        );
-//        Role role = roleRepository.findByRole("agency");
-//        user.setRole(role);
-//        if(userService.findByEmailAddress(user.getEmailAddress())==null){
-//            userService.saveAgency(user);
-//        }
-//    }
+    public void createCurryItemsIfNotExists() throws IOException {
+        log.info("Seeding default curry items if not present");
+
+        String jsonContent = AppResources.asString("default/curry-items.json")
+                .orElseThrow(() -> new RuntimeException("Error reading JSON file: default/curry-items.json"));
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        List<CurryItem> items = objectMapper.readValue(
+                jsonContent,
+                new com.fasterxml.jackson.core.type.TypeReference<List<CurryItem>>() {
+                }
+        );
+
+        int inserted = 0;
+        for (CurryItem item : items) {
+
+            boolean exists = curryItemRepository.existsByNameIgnoreCase(item.getName());
+
+            if (!exists) {
+                item.setId(null);
+                curryItemRepository.save(item);
+                inserted++;
+                log.info("Seeded curry: {}", item.getName());
+            } else {
+                log.info("Exists, skipping: {}", item.getName());
+            }
+            log.info("Curry item seeding done. Inserted: {}", inserted);
+        }
+    }
+
 
 
 }

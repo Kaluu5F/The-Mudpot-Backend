@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Chicken Curry (Kukul Mas)",
+    "description": "Classic Sri Lankan chicken curry simmered with roasted curry powder, coconut milk, and pandan leaves.",
+    "price": 1490.00,
+    "availability": "AVAILABLE",
+    "imageUrl": "https://www.tasteatlas.com/images/dishes/02b0befde0a24c579b601579f0ed5e36.jpg"
+  },
+  {
+    "name": "Fish Ambul Thiyal",
+    "description": "Tangy sour fish curry from the south; goraka and black pepper give a deep, smoky sourness.",
+    "price": 1790.00,
+    "availability": "AVAILABLE",
+    "imageUrl": "https://i0.wp.com/theperfectcurry.com/wp-content/uploads/2022/10/PXL_20221004_141950841.PORTRAIT.jpg"
+  },
+  {
+    "name": "Dhal Curry (Parippu)",
+    "description": "Red lentils tempered with mustard, curry leaves, and coconut milk — a staple comfort curry.",
+    "price": 890.00,
+    "availability": "AVAILABLE",
+    "imageUrl": "https://images.getrecipekit.com/20240928070107-sri-lankan-dhal-curry.webp?"
+  },
+  {
+    "name": "Polos Curry (Young Jackfruit)",
+    "description": "Tender young jackfruit in rich roasted spices and coconut gravy.",
+    "price": 1290.00,
+    "availability": "AVAILABLE",
+    "imageUrl": "https://www.islandsmile.org/wp-content/uploads/2018/04/polos-curry-islandsmile.org-6456.jpg"
+  },
+  {
+    "name": "Brinjal Moju (Wambatu)",
+    "description": "Sweet-sour fried eggplant pickle with onions and green chilies — a festive favourite.",
+    "price": 1150.00,
+    "availability": "SEASONAL",
+    "imageUrl": "https://rakskitchen.net/wp-content/uploads/2021/12/brinjal-moju.jpg"
+  },
+  {
+    "name": "Black Pork Curry",
+    "description": "Dark, peppery pork curry slow-cooked with roasted spices and tamarind.",
+    "price": 1890.00,
+    "availability": "AVAILABLE",
+    "imageUrl": "https://www.hungrylankan.com/wp-content/uploads/2024/06/Black-pork-curry-recipe-2-1-768x1024.jpg.webp"
+  },
+  {
+    "name": "Jaffna Crab Curry",
+    "description": "Fiery crab curry with Jaffna curry powder and fragrant spices.",
+    "price": 2490.00,
+    "availability": "SEASONAL",
+    "imageUrl": "https://www.thefooddictator.com/wp-content/uploads/2016/08/Jaffna-Style-Crab-Curry.jpg"
+  },
+  {
+    "name": "Prawn Curry (Isso)",
+    "description": "Prawns simmered in coconut milk with turmeric, fenugreek, and curry leaves.",
+    "price": 1990.00,
+    "availability": "AVAILABLE",
+    "imageUrl": "https://www.dailyfoodrecipes.com/wp-content/uploads/2017/09/Prawn-Curry-8.jpg"
+  },
+  {
+    "name": "Cashew Curry (Kajju Maluwa)",
+    "description": "Creamy cashew curry with coconut milk — rich and mildly spiced.",
+    "price": 1690.00,
+    "availability": "AVAILABLE",
+    "imageUrl": "https://www.theflavorbender.com/wp-content/uploads/2016/11/Sri-Lankan-Cashew-Curry-5568-700x1057.jpg"
+  },
+  {
+    "name": "Pumpkin Curry (Wattakka)",
+    "description": "Sweet pumpkin cubes in a gentle coconut-milk gravy, tempered with mustard and chilies.",
+    "price": 990.00,
+    "availability": "AVAILABLE",
+    "imageUrl": "https://www.indianhealthyrecipes.com/wp-content/uploads/2022/10/pumpkin-curry.webp"
+  }
+]
